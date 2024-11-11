@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator - Projects</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Your Projects</h1>
+        <form id="projectForm" onsubmit="return handleProjectSubmit(event)">
+            <div class="form-group">
+                <label for="title">Project Title:</label>
+                <input type="text" id="title" name="title" required>
+                <div class="error" id="titleError">Please enter a project title</div>
+            </div>
+
+            <div class="date-group">
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" required>
+                    <div class="error" id="startDateError">Please enter a start date</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">Release Date:</label>
+                    <input type="date" id="endDate" name="endDate" required>
+                    <div class="error" id="endDateError">Please enter a release date</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="github">GitHub Link:</label>
+                <input type="url" id="github" name="github" required>
+                <div class="error" id="githubError">Please enter a valid GitHub link</div>
+            </div>
+
+            <div class="form-group">
+                <label>Skills Achieved:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="html" name="skills" value="HTML">
+                    <label for="html">HTML</label><br>
+
+                    <input type="checkbox" id="css" name="skills" value="CSS">
+                    <label for="css">CSS</label><br>
+
+                    <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+                    <label for="javascript">JavaScript</label><br>
+
+                    <input type="checkbox" id="react" name="skills" value="React">
+                    <label for="react">React</label><br>
+
+                    <input type="checkbox" id="node" name="skills" value="Node.js">
+                    <label for="node">Node.js</label><br>
+
+                    <input type="checkbox" id="sql" name="skills" value="SQL">
+                    <label for="sql">SQL</label><br>
+
+                    <input type="checkbox" id="python" name="skills" value="Python">
+                    <label for="python">Python</label>
+                </div>
+                <div class="error" id="skillsError">Please select at least one skill</div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Add Project</button>
+                <button type="button" class="secondary" onclick="finish()">Finish</button>
+            </div>
+        </form>
+
+        <div class="projects-list" id="projectsList"></div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
